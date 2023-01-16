@@ -1,33 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Idle Detection</title>
-</head>
-<body>
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: 'Courier New', Courier, monospace;
+}
 
-    <div class="text">If you Afk or does thouch your mouse, you will disconnected from this site.</div>
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background:linear-gradient(#fff, #000);
+}
 
-<script>
-    var last_activity_time = new Date().getTime();
-    var idle_time_limit = 300000; // 5 minutes
 
-     setInterval(function() {
-        var current_time = new Date().getTime();
-        var idle_time = current_time - last_activity_time; 
-        
-        if (idle_time > idle_time_limit) {    //  If idle detected  \\
-            alert("You Kicked out from this website");
-            window.location.href = "MoveToOtherPage.html";
-        }
-    }, 100000); // every 1 minute
+.text{
+    font-size: 44px;
+    padding:20px;
+    color:#fff;
+}
 
-    document.onmousemove = function() {
-        last_activity_time = new Date().getTime();
-    };
-</script>
-</body>
-</html>
+span{
+    color:red;
+}
+
+footer{
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    bottom:0;
+    padding:20px;
+}
+
+footer p{
+    text-align: center;
+}
